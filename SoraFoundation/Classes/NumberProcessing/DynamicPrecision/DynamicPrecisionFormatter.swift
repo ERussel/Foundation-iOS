@@ -12,13 +12,16 @@ open class DynamicPrecisionFormatter: LocalizableDecimalFormatting {
 
     let numberFormatter: NumberFormatter
     let preferredPrecision: UInt8
+    let preferredPrecisionOffset: UInt8
 
     public init(
         preferredPrecision: UInt8,
+        preferredPrecisionOffset: UInt8 = 0,
         roundingMode: NumberFormatter.RoundingMode = .halfUp,
         usesIntGrouping: Bool = false
     ) {
         self.preferredPrecision = min(preferredPrecision, Self.maxPrecision)
+        self.preferredPrecisionOffset = preferredPrecisionOffset
 
         numberFormatter = NumberFormatter.decimalFormatter(
             precision: 0,
@@ -48,8 +51,10 @@ open class DynamicPrecisionFormatter: LocalizableDecimalFormatting {
         }
 
         let precision = max(maybePrecision ?? preferredPrecision, preferredPrecision)
+        
+        let formatterPrecission = min(precision + preferredPrecisionOffset, Self.maxPrecision - 1)
 
-        numberFormatter.maximumFractionDigits = Int(precision)
+        numberFormatter.maximumFractionDigits = Int(formatterPrecission)
 
         return numberFormatter.string(from: value as NSNumber)
     }
