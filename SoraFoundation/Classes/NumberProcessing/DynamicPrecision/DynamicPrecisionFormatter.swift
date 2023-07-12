@@ -50,9 +50,17 @@ open class DynamicPrecisionFormatter: LocalizableDecimalFormatting {
             return precValue >= 1.0
         }
 
-        let precision = max(maybePrecision ?? preferredPrecision, preferredPrecision)
+        let firstNonZeroPosition = (0...preferredPrecision).first { prec in
+            let precValue = (value as NSDecimalNumber).multiplying(byPowerOf10: Int16(prec)) as Decimal
+            return precValue >= 1.0
+        } ?? preferredPrecision
         
-        let formatterPrecission = min(precision + preferredPrecisionOffset, Self.maxPrecision - 1)
+        let precision = max(maybePrecision ?? preferredPrecision, preferredPrecision)
+        let offsetFromPreferred = preferredPrecision - firstNonZeroPosition
+        let precisionOffset = preferredPrecisionOffset > offsetFromPreferred ?
+            preferredPrecisionOffset - offsetFromPreferred : 0
+        
+        let formatterPrecission = min(precision + precisionOffset, Self.maxPrecision - 1)
 
         numberFormatter.maximumFractionDigits = Int(formatterPrecission)
 
