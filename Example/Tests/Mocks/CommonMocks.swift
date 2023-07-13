@@ -4,6 +4,10 @@ import Cuckoo
 import UIKit
 
 
+
+
+
+
 public class MockApplicationHandlerDelegate: ApplicationHandlerDelegate, Cuckoo.ProtocolMock {
     
     public typealias MocksType = ApplicationHandlerDelegate
@@ -29,9 +33,13 @@ public class MockApplicationHandlerDelegate: ApplicationHandlerDelegate, Cuckoo.
     
     
     
+    
     public func didReceiveWillResignActive(notification: Notification)  {
         
-    return cuckoo_manager.call("didReceiveWillResignActive(notification: Notification)",
+    return cuckoo_manager.call(
+    """
+    didReceiveWillResignActive(notification: Notification)
+    """,
             parameters: (notification),
             escapingParameters: (notification),
             superclassCall:
@@ -44,9 +52,14 @@ public class MockApplicationHandlerDelegate: ApplicationHandlerDelegate, Cuckoo.
     
     
     
+    
+    
     public func didReceiveDidBecomeActive(notification: Notification)  {
         
-    return cuckoo_manager.call("didReceiveDidBecomeActive(notification: Notification)",
+    return cuckoo_manager.call(
+    """
+    didReceiveDidBecomeActive(notification: Notification)
+    """,
             parameters: (notification),
             escapingParameters: (notification),
             superclassCall:
@@ -59,9 +72,14 @@ public class MockApplicationHandlerDelegate: ApplicationHandlerDelegate, Cuckoo.
     
     
     
+    
+    
     public func didReceiveWillEnterForeground(notification: Notification)  {
         
-    return cuckoo_manager.call("didReceiveWillEnterForeground(notification: Notification)",
+    return cuckoo_manager.call(
+    """
+    didReceiveWillEnterForeground(notification: Notification)
+    """,
             parameters: (notification),
             escapingParameters: (notification),
             superclassCall:
@@ -74,9 +92,14 @@ public class MockApplicationHandlerDelegate: ApplicationHandlerDelegate, Cuckoo.
     
     
     
+    
+    
     public func didReceiveDidEnterBackground(notification: Notification)  {
         
-    return cuckoo_manager.call("didReceiveDidEnterBackground(notification: Notification)",
+    return cuckoo_manager.call(
+    """
+    didReceiveDidEnterBackground(notification: Notification)
+    """,
             parameters: (notification),
             escapingParameters: (notification),
             superclassCall:
@@ -87,77 +110,127 @@ public class MockApplicationHandlerDelegate: ApplicationHandlerDelegate, Cuckoo.
         
     }
     
+    
 
-	public struct __StubbingProxy_ApplicationHandlerDelegate: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	    public init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    func didReceiveWillResignActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method: "didReceiveWillResignActive(notification: Notification)", parameterMatchers: matchers))
-	    }
-	    
-	    func didReceiveDidBecomeActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method: "didReceiveDidBecomeActive(notification: Notification)", parameterMatchers: matchers))
-	    }
-	    
-	    func didReceiveWillEnterForeground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method: "didReceiveWillEnterForeground(notification: Notification)", parameterMatchers: matchers))
-	    }
-	    
-	    func didReceiveDidEnterBackground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method: "didReceiveDidEnterBackground(notification: Notification)", parameterMatchers: matchers))
-	    }
-	    
-	}
+    public struct __StubbingProxy_ApplicationHandlerDelegate: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+        public init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        
+        func didReceiveWillResignActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method:
+    """
+    didReceiveWillResignActive(notification: Notification)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func didReceiveDidBecomeActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method:
+    """
+    didReceiveDidBecomeActive(notification: Notification)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func didReceiveWillEnterForeground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method:
+    """
+    didReceiveWillEnterForeground(notification: Notification)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func didReceiveDidEnterBackground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(Notification)> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockApplicationHandlerDelegate.self, method:
+    """
+    didReceiveDidEnterBackground(notification: Notification)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+    }
 
-	public struct __VerificationProxy_ApplicationHandlerDelegate: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	    public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	
-	    
-	    @discardableResult
-	    func didReceiveWillResignActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return cuckoo_manager.verify("didReceiveWillResignActive(notification: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func didReceiveDidBecomeActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return cuckoo_manager.verify("didReceiveDidBecomeActive(notification: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func didReceiveWillEnterForeground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return cuckoo_manager.verify("didReceiveWillEnterForeground(notification: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func didReceiveDidEnterBackground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
-	        let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
-	        return cuckoo_manager.verify("didReceiveDidEnterBackground(notification: Notification)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	}
+    public struct __VerificationProxy_ApplicationHandlerDelegate: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+        public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+    
+        
+        
+        
+        @discardableResult
+        func didReceiveWillResignActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didReceiveWillResignActive(notification: Notification)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func didReceiveDidBecomeActive<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didReceiveDidBecomeActive(notification: Notification)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func didReceiveWillEnterForeground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didReceiveWillEnterForeground(notification: Notification)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func didReceiveDidEnterBackground<M1: Cuckoo.Matchable>(notification: M1) -> Cuckoo.__DoNotUse<(Notification), Void> where M1.MatchedType == Notification {
+            let matchers: [Cuckoo.ParameterMatcher<(Notification)>] = [wrap(matchable: notification) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didReceiveDidEnterBackground(notification: Notification)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+    }
 }
+
 
 public class ApplicationHandlerDelegateStub: ApplicationHandlerDelegate {
     
@@ -165,23 +238,46 @@ public class ApplicationHandlerDelegateStub: ApplicationHandlerDelegate {
     
 
     
+    
+    
+    
     public func didReceiveWillResignActive(notification: Notification)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
+    
+    
     
     public func didReceiveDidBecomeActive(notification: Notification)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
+    
+    
     public func didReceiveWillEnterForeground(notification: Notification)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
+    
+    
     
     public func didReceiveDidEnterBackground(notification: Notification)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
 }
+
+
+
+
+
+
+
 
 
 
@@ -206,6 +302,7 @@ public class MockApplicationHandlerProtocol: ApplicationHandlerProtocol, Cuckoo.
     
     
     
+    
     public var delegate: ApplicationHandlerDelegate? {
         get {
             return cuckoo_manager.getter("delegate",
@@ -213,7 +310,7 @@ public class MockApplicationHandlerProtocol: ApplicationHandlerProtocol, Cuckoo.
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.delegate)
+                defaultCall:  __defaultImplStub!.delegate)
         }
         
         set {
@@ -228,49 +325,57 @@ public class MockApplicationHandlerProtocol: ApplicationHandlerProtocol, Cuckoo.
         
     }
     
-
     
 
     
 
-	public struct __StubbingProxy_ApplicationHandlerProtocol: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	    public init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    var delegate: Cuckoo.ProtocolToBeStubbedOptionalProperty<MockApplicationHandlerProtocol, ApplicationHandlerDelegate> {
-	        return .init(manager: cuckoo_manager, name: "delegate")
-	    }
-	    
-	    
-	}
+    
 
-	public struct __VerificationProxy_ApplicationHandlerProtocol: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	    public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	    
-	    var delegate: Cuckoo.VerifyOptionalProperty<ApplicationHandlerDelegate> {
-	        return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	
-	    
-	}
+    public struct __StubbingProxy_ApplicationHandlerProtocol: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+        public init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        var delegate: Cuckoo.ProtocolToBeStubbedOptionalProperty<MockApplicationHandlerProtocol, ApplicationHandlerDelegate> {
+            return .init(manager: cuckoo_manager, name: "delegate")
+        }
+        
+        
+        
+    }
+
+    public struct __VerificationProxy_ApplicationHandlerProtocol: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+        public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+        
+        
+        var delegate: Cuckoo.VerifyOptionalProperty<ApplicationHandlerDelegate> {
+            return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+    
+        
+    }
 }
 
+
 public class ApplicationHandlerProtocolStub: ApplicationHandlerProtocol {
+    
+    
     
     
     public var delegate: ApplicationHandlerDelegate? {
@@ -282,6 +387,7 @@ public class ApplicationHandlerProtocolStub: ApplicationHandlerProtocol {
         
     }
     
+    
 
     
 
@@ -289,10 +395,17 @@ public class ApplicationHandlerProtocolStub: ApplicationHandlerProtocol {
 }
 
 
+
+
+
 import Cuckoo
 @testable import SoraFoundation
 
 import Foundation
+
+
+
+
 
 
 public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.ProtocolMock {
@@ -316,6 +429,7 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
     
     
     
+    
     public var delegate: CountdownTimerDelegate? {
         get {
             return cuckoo_manager.getter("delegate",
@@ -323,7 +437,7 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.delegate)
+                defaultCall:  __defaultImplStub!.delegate)
         }
         
         set {
@@ -340,6 +454,8 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
     
     
     
+    
+    
     public var state: CountdownTimerState {
         get {
             return cuckoo_manager.getter("state",
@@ -347,10 +463,12 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.state)
+                defaultCall:  __defaultImplStub!.state)
         }
         
     }
+    
+    
     
     
     
@@ -361,10 +479,12 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.notificationInterval)
+                defaultCall:  __defaultImplStub!.notificationInterval)
         }
         
     }
+    
+    
     
     
     
@@ -375,20 +495,25 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.remainedInterval)
+                defaultCall:  __defaultImplStub!.remainedInterval)
         }
         
     }
     
+    
 
     
 
+    
     
     
     
     public func start(with interval: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)  {
         
-    return cuckoo_manager.call("start(with: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)",
+    return cuckoo_manager.call(
+    """
+    start(with: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)
+    """,
             parameters: (interval, runLoop, mode),
             escapingParameters: (interval, runLoop, mode),
             superclassCall:
@@ -401,9 +526,14 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
     
     
     
+    
+    
     public func stop()  {
         
-    return cuckoo_manager.call("stop()",
+    return cuckoo_manager.call(
+    """
+    stop()
+    """,
             parameters: (),
             escapingParameters: (),
             superclassCall:
@@ -414,97 +544,141 @@ public class MockCountdownTimerProtocol: CountdownTimerProtocol, Cuckoo.Protocol
         
     }
     
+    
 
-	public struct __StubbingProxy_CountdownTimerProtocol: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	    public init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    var delegate: Cuckoo.ProtocolToBeStubbedOptionalProperty<MockCountdownTimerProtocol, CountdownTimerDelegate> {
-	        return .init(manager: cuckoo_manager, name: "delegate")
-	    }
-	    
-	    
-	    var state: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockCountdownTimerProtocol, CountdownTimerState> {
-	        return .init(manager: cuckoo_manager, name: "state")
-	    }
-	    
-	    
-	    var notificationInterval: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockCountdownTimerProtocol, TimeInterval> {
-	        return .init(manager: cuckoo_manager, name: "notificationInterval")
-	    }
-	    
-	    
-	    var remainedInterval: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockCountdownTimerProtocol, TimeInterval> {
-	        return .init(manager: cuckoo_manager, name: "remainedInterval")
-	    }
-	    
-	    
-	    func start<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(with interval: M1, runLoop: M2, mode: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval, RunLoop, RunLoop.Mode)> where M1.MatchedType == TimeInterval, M2.MatchedType == RunLoop, M3.MatchedType == RunLoop.Mode {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval, RunLoop, RunLoop.Mode)>] = [wrap(matchable: interval) { $0.0 }, wrap(matchable: runLoop) { $0.1 }, wrap(matchable: mode) { $0.2 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerProtocol.self, method: "start(with: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)", parameterMatchers: matchers))
-	    }
-	    
-	    func stop() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerProtocol.self, method: "stop()", parameterMatchers: matchers))
-	    }
-	    
-	}
+    public struct __StubbingProxy_CountdownTimerProtocol: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+        public init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        var delegate: Cuckoo.ProtocolToBeStubbedOptionalProperty<MockCountdownTimerProtocol, CountdownTimerDelegate> {
+            return .init(manager: cuckoo_manager, name: "delegate")
+        }
+        
+        
+        
+        
+        var state: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockCountdownTimerProtocol, CountdownTimerState> {
+            return .init(manager: cuckoo_manager, name: "state")
+        }
+        
+        
+        
+        
+        var notificationInterval: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockCountdownTimerProtocol, TimeInterval> {
+            return .init(manager: cuckoo_manager, name: "notificationInterval")
+        }
+        
+        
+        
+        
+        var remainedInterval: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockCountdownTimerProtocol, TimeInterval> {
+            return .init(manager: cuckoo_manager, name: "remainedInterval")
+        }
+        
+        
+        
+        
+        
+        func start<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(with interval: M1, runLoop: M2, mode: M3) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval, RunLoop, RunLoop.Mode)> where M1.MatchedType == TimeInterval, M2.MatchedType == RunLoop, M3.MatchedType == RunLoop.Mode {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval, RunLoop, RunLoop.Mode)>] = [wrap(matchable: interval) { $0.0 }, wrap(matchable: runLoop) { $0.1 }, wrap(matchable: mode) { $0.2 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerProtocol.self, method:
+    """
+    start(with: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func stop() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerProtocol.self, method:
+    """
+    stop()
+    """, parameterMatchers: matchers))
+        }
+        
+        
+    }
 
-	public struct __VerificationProxy_CountdownTimerProtocol: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	    public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	    
-	    var delegate: Cuckoo.VerifyOptionalProperty<CountdownTimerDelegate> {
-	        return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	    
-	    var state: Cuckoo.VerifyReadOnlyProperty<CountdownTimerState> {
-	        return .init(manager: cuckoo_manager, name: "state", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	    
-	    var notificationInterval: Cuckoo.VerifyReadOnlyProperty<TimeInterval> {
-	        return .init(manager: cuckoo_manager, name: "notificationInterval", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	    
-	    var remainedInterval: Cuckoo.VerifyReadOnlyProperty<TimeInterval> {
-	        return .init(manager: cuckoo_manager, name: "remainedInterval", callMatcher: callMatcher, sourceLocation: sourceLocation)
-	    }
-	    
-	
-	    
-	    @discardableResult
-	    func start<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(with interval: M1, runLoop: M2, mode: M3) -> Cuckoo.__DoNotUse<(TimeInterval, RunLoop, RunLoop.Mode), Void> where M1.MatchedType == TimeInterval, M2.MatchedType == RunLoop, M3.MatchedType == RunLoop.Mode {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval, RunLoop, RunLoop.Mode)>] = [wrap(matchable: interval) { $0.0 }, wrap(matchable: runLoop) { $0.1 }, wrap(matchable: mode) { $0.2 }]
-	        return cuckoo_manager.verify("start(with: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func stop() -> Cuckoo.__DoNotUse<(), Void> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("stop()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	}
+    public struct __VerificationProxy_CountdownTimerProtocol: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+        public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+        
+        
+        var delegate: Cuckoo.VerifyOptionalProperty<CountdownTimerDelegate> {
+            return .init(manager: cuckoo_manager, name: "delegate", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var state: Cuckoo.VerifyReadOnlyProperty<CountdownTimerState> {
+            return .init(manager: cuckoo_manager, name: "state", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var notificationInterval: Cuckoo.VerifyReadOnlyProperty<TimeInterval> {
+            return .init(manager: cuckoo_manager, name: "notificationInterval", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        var remainedInterval: Cuckoo.VerifyReadOnlyProperty<TimeInterval> {
+            return .init(manager: cuckoo_manager, name: "remainedInterval", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
+    
+        
+        
+        
+        @discardableResult
+        func start<M1: Cuckoo.Matchable, M2: Cuckoo.Matchable, M3: Cuckoo.Matchable>(with interval: M1, runLoop: M2, mode: M3) -> Cuckoo.__DoNotUse<(TimeInterval, RunLoop, RunLoop.Mode), Void> where M1.MatchedType == TimeInterval, M2.MatchedType == RunLoop, M3.MatchedType == RunLoop.Mode {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval, RunLoop, RunLoop.Mode)>] = [wrap(matchable: interval) { $0.0 }, wrap(matchable: runLoop) { $0.1 }, wrap(matchable: mode) { $0.2 }]
+            return cuckoo_manager.verify(
+    """
+    start(with: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func stop() -> Cuckoo.__DoNotUse<(), Void> {
+            let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+            return cuckoo_manager.verify(
+    """
+    stop()
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+    }
 }
 
+
 public class CountdownTimerProtocolStub: CountdownTimerProtocol {
+    
+    
     
     
     public var delegate: CountdownTimerDelegate? {
@@ -517,12 +691,18 @@ public class CountdownTimerProtocolStub: CountdownTimerProtocol {
     }
     
     
+    
+    
+    
     public var state: CountdownTimerState {
         get {
             return DefaultValueRegistry.defaultValue(for: (CountdownTimerState).self)
         }
         
     }
+    
+    
+    
     
     
     public var notificationInterval: TimeInterval {
@@ -533,6 +713,9 @@ public class CountdownTimerProtocolStub: CountdownTimerProtocol {
     }
     
     
+    
+    
+    
     public var remainedInterval: TimeInterval {
         get {
             return DefaultValueRegistry.defaultValue(for: (TimeInterval).self)
@@ -540,19 +723,35 @@ public class CountdownTimerProtocolStub: CountdownTimerProtocol {
         
     }
     
+    
 
     
 
+    
+    
+    
     
     public func start(with interval: TimeInterval, runLoop: RunLoop, mode: RunLoop.Mode)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
+    
+    
     public func stop()   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
 }
+
+
+
+
+
+
+
 
 
 
@@ -581,9 +780,13 @@ public class MockCountdownTimerDelegate: CountdownTimerDelegate, Cuckoo.Protocol
     
     
     
+    
     public func didStart(with interval: TimeInterval)  {
         
-    return cuckoo_manager.call("didStart(with: TimeInterval)",
+    return cuckoo_manager.call(
+    """
+    didStart(with: TimeInterval)
+    """,
             parameters: (interval),
             escapingParameters: (interval),
             superclassCall:
@@ -596,9 +799,14 @@ public class MockCountdownTimerDelegate: CountdownTimerDelegate, Cuckoo.Protocol
     
     
     
+    
+    
     public func didCountdown(remainedInterval: TimeInterval)  {
         
-    return cuckoo_manager.call("didCountdown(remainedInterval: TimeInterval)",
+    return cuckoo_manager.call(
+    """
+    didCountdown(remainedInterval: TimeInterval)
+    """,
             parameters: (remainedInterval),
             escapingParameters: (remainedInterval),
             superclassCall:
@@ -611,9 +819,14 @@ public class MockCountdownTimerDelegate: CountdownTimerDelegate, Cuckoo.Protocol
     
     
     
+    
+    
     public func didStop(with remainedInterval: TimeInterval)  {
         
-    return cuckoo_manager.call("didStop(with: TimeInterval)",
+    return cuckoo_manager.call(
+    """
+    didStop(with: TimeInterval)
+    """,
             parameters: (remainedInterval),
             escapingParameters: (remainedInterval),
             superclassCall:
@@ -624,66 +837,104 @@ public class MockCountdownTimerDelegate: CountdownTimerDelegate, Cuckoo.Protocol
         
     }
     
+    
 
-	public struct __StubbingProxy_CountdownTimerDelegate: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	    public init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    func didStart<M1: Cuckoo.Matchable>(with interval: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval)> where M1.MatchedType == TimeInterval {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: interval) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerDelegate.self, method: "didStart(with: TimeInterval)", parameterMatchers: matchers))
-	    }
-	    
-	    func didCountdown<M1: Cuckoo.Matchable>(remainedInterval: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval)> where M1.MatchedType == TimeInterval {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerDelegate.self, method: "didCountdown(remainedInterval: TimeInterval)", parameterMatchers: matchers))
-	    }
-	    
-	    func didStop<M1: Cuckoo.Matchable>(with remainedInterval: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval)> where M1.MatchedType == TimeInterval {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerDelegate.self, method: "didStop(with: TimeInterval)", parameterMatchers: matchers))
-	    }
-	    
-	}
+    public struct __StubbingProxy_CountdownTimerDelegate: Cuckoo.StubbingProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+    
+        public init(manager: Cuckoo.MockManager) {
+            self.cuckoo_manager = manager
+        }
+        
+        
+        
+        
+        func didStart<M1: Cuckoo.Matchable>(with interval: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval)> where M1.MatchedType == TimeInterval {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: interval) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerDelegate.self, method:
+    """
+    didStart(with: TimeInterval)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func didCountdown<M1: Cuckoo.Matchable>(remainedInterval: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval)> where M1.MatchedType == TimeInterval {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerDelegate.self, method:
+    """
+    didCountdown(remainedInterval: TimeInterval)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+        
+        
+        func didStop<M1: Cuckoo.Matchable>(with remainedInterval: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(TimeInterval)> where M1.MatchedType == TimeInterval {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
+            return .init(stub: cuckoo_manager.createStub(for: MockCountdownTimerDelegate.self, method:
+    """
+    didStop(with: TimeInterval)
+    """, parameterMatchers: matchers))
+        }
+        
+        
+    }
 
-	public struct __VerificationProxy_CountdownTimerDelegate: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	    public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	
-	    
-	    @discardableResult
-	    func didStart<M1: Cuckoo.Matchable>(with interval: M1) -> Cuckoo.__DoNotUse<(TimeInterval), Void> where M1.MatchedType == TimeInterval {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: interval) { $0 }]
-	        return cuckoo_manager.verify("didStart(with: TimeInterval)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func didCountdown<M1: Cuckoo.Matchable>(remainedInterval: M1) -> Cuckoo.__DoNotUse<(TimeInterval), Void> where M1.MatchedType == TimeInterval {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
-	        return cuckoo_manager.verify("didCountdown(remainedInterval: TimeInterval)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func didStop<M1: Cuckoo.Matchable>(with remainedInterval: M1) -> Cuckoo.__DoNotUse<(TimeInterval), Void> where M1.MatchedType == TimeInterval {
-	        let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
-	        return cuckoo_manager.verify("didStop(with: TimeInterval)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	}
+    public struct __VerificationProxy_CountdownTimerDelegate: Cuckoo.VerificationProxy {
+        private let cuckoo_manager: Cuckoo.MockManager
+        private let callMatcher: Cuckoo.CallMatcher
+        private let sourceLocation: Cuckoo.SourceLocation
+    
+        public init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+            self.cuckoo_manager = manager
+            self.callMatcher = callMatcher
+            self.sourceLocation = sourceLocation
+        }
+    
+        
+    
+        
+        
+        
+        @discardableResult
+        func didStart<M1: Cuckoo.Matchable>(with interval: M1) -> Cuckoo.__DoNotUse<(TimeInterval), Void> where M1.MatchedType == TimeInterval {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: interval) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didStart(with: TimeInterval)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func didCountdown<M1: Cuckoo.Matchable>(remainedInterval: M1) -> Cuckoo.__DoNotUse<(TimeInterval), Void> where M1.MatchedType == TimeInterval {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didCountdown(remainedInterval: TimeInterval)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+        
+        
+        @discardableResult
+        func didStop<M1: Cuckoo.Matchable>(with remainedInterval: M1) -> Cuckoo.__DoNotUse<(TimeInterval), Void> where M1.MatchedType == TimeInterval {
+            let matchers: [Cuckoo.ParameterMatcher<(TimeInterval)>] = [wrap(matchable: remainedInterval) { $0 }]
+            return cuckoo_manager.verify(
+    """
+    didStop(with: TimeInterval)
+    """, callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+        }
+        
+        
+    }
 }
+
 
 public class CountdownTimerDelegateStub: CountdownTimerDelegate {
     
@@ -691,17 +942,32 @@ public class CountdownTimerDelegateStub: CountdownTimerDelegate {
     
 
     
+    
+    
+    
     public func didStart(with interval: TimeInterval)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
+    
+    
+    
+    
     
     public func didCountdown(remainedInterval: TimeInterval)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
+    
+    
+    
     public func didStop(with remainedInterval: TimeInterval)   {
         return DefaultValueRegistry.defaultValue(for: (Void).self)
     }
     
+    
 }
+
+
+
 
